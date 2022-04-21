@@ -1,16 +1,17 @@
 Paul Hennessee
 Parsons Coding Excercise
-4/18/2022
+4/21/2022
 
 **Solution**\
-I used python for my soultion This is a review of the requirements of the excercise:
-1) I altered the stack.py in the python folder as directed to implement the stack.py functions utilizing two queues
-2) I have also written test coverage for 100% code coverage (all lines of written code were read and executed)
-    the test code is also in stack.py
-3) dockerfile written
-4) This is my README.md. instructions below
+UPDATE: solution implemented in python and C++
+1) stack.py and stack.cpp have stack implementations
+2) test coverage written for 100% code coverage (all lines of written code were read and executed)
+    the test code is also in stack.py and stack.cpp
+3) dockerfiles written
+4) This is my README.md. instructions to build and run detailed below
 
-To build and run the container...
+**python**\
+To build and run the PYTHON container...
 open your terminal
 make sure you have docker installed using "docker -v"
 Navigate to the "python" file directory in the code_challenge
@@ -18,9 +19,30 @@ Use the commands:
 "docker build -t [imageName] ." to build
 and "docker run [imageName]" to run
 
+I used this tutorial to build my dockerfile: https://www.youtube.com/watch?v=bi0cKgmRuiA
 The python file should run the test cases and print out the number of test cases passed to the terminal via the image
 
+**C++**\
+To build and run the C++ container...
+open your terminal
+make sure you have docker installed using "docker -v"
+Navigate to the "cpp" file directory in the code_challenge
+Use the commands (same as above):
+"docker build -t [imageName] ." to build
+and "docker run [imageName]" to run
+"docker build . -t stack_test" to build
+"docker run stack_test" to run
+
+
+I used this tutorial to build my dockerfile: https://www.youtube.com/watch?v=VZK224Tj_4w
+The c++ file should run the test cases and print out that it passed the given tests, and the number of my test cases passed to the terminal via the image
+
+
 **Notes:**\
+4/21/2022========================================================================
+The stack.py and stack.cpp have been fully tested and run on my end. I built both of my docker files using tutorials. I failed to successfully run the docker files on my end. I need to look into installing ubuntu on my machine.
+
+4/18/2022========================================================================
 On my end the stack runs and passes all of my test cases.
 
 I used "docker build -t python-stack ." to build
@@ -30,3 +52,4 @@ I tried restarting my computer, but that didn't fix the issue. I tried typing "d
 I also tried to run "net stop com.docker.service" and "net start com.docker.service" but it just said "Access denied"
 
 I am not sure what else to try on my end. Though I have not tested my docker file, If you have docker running properly on your machine, it should work, as I set it up following a tutorial.
+UPDATE: Trevor recommended looking into running ubuntu
