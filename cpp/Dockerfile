@@ -2,8 +2,12 @@ FROM ubuntu:latest
 
 RUN apt-get -y update && apt-get install -y
 
-#Install your compiler 
+RUN apt-get -y install clang
 
-#Build you app
+COPY . /code_challenge/cpp
 
-#Run your app
+WORKDIR /code_challenge/cpp
+
+RUN clang++ -o stack stack.cpp
+
+CMD ["./stack"]
